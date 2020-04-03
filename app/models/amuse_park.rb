@@ -1,0 +1,2 @@
+class AmusePark < ApplicationRecord
+end
