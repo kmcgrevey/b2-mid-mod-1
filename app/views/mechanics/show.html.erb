@@ -5,3 +5,15 @@
 <% @mechanic.rides.each do |ride| %>
     <p><%= ride.name %></p>
 <% end %>
+
+<h2>Rides List:<h2>
+<% @amuse_park.rides.each do |ride| %>
+    <p><%= ride.name %> ride id: <%= ride.id %></p>
+<% end %>
+
+<h2>Add Ride to Work List:</h2>
+<%= form_tag("/mechanic_rides/#{@mechanic.id}", method: :patch) do %>
+    <%= label_tag :ride_id %>
+    <%= text_field_tag :ride_id %></br>
+    <%= submit_tag "Add Ride" %>
+<% end %>

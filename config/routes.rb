@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
  get '/amuse_parks/:id', to: 'amuse_parks#show'
 
+  patch '/mechanic_rides/:mech_id', to: 'mechanics#update'
+
 end

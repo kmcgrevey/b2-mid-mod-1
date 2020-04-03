@@ -12,16 +12,27 @@ RSpec.describe "When I visit a mechanic's show page" do
 
     MechanicRide.create!(mechanic_id: @mech1.id, ride_id: @ride1.id)
     MechanicRide.create!(mechanic_id: @mech1.id, ride_id: @ride2.id)
+    
+    visit "/mechanics/#{@mech1.id}"
   end
   
   it "I see their name, years of exp, names of all rides working on" do
-    visit "/mechanics/#{@mech1.id}"
 
     expect(page).to have_content(@mech1.name)
     expect(page).to have_content(@mech1.years_exp)
     expect(page).to have_content(@ride1.name)
     expect(page).to have_content(@ride2.name)
   
+  end
+
+  it "I can fill in form with ride id from a list to add to their work list" do
+    expect(page).not_to have_content(@ride3.name)
+    
+    fill_in :ride_id, with "#{@ride3.id}"
+    click_button "Add Ride"
+
+    expect(page).to have_content(@ride3.name)
+
   end
 end
 
