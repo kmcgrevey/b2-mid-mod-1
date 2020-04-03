@@ -1,2 +1,11 @@
 <h1><%= @amuse_park.name%></h1>
 <h2>Admission: $<%= @amuse_park.price%></h2>
+<br/>
+
+<h2>Rides:</h2>
+<section id='park_rides-<%= @amuse_park.id %>'>
+  <% @amuse_park.ordered_rides.each do |ride| %>
+      <p><%= "#{ride.name}" %></p>
+  <% end %>
+</section>
+

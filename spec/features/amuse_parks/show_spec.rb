@@ -18,7 +18,7 @@ RSpec.describe "When I visit an amusement park's show page" do
 
   it "I see an alphabetical list of all its rides" do
     #need to test for order in an array -- in model?
-      within "#rides-#{@park.id}" do
+      within "#park_rides-#{@park.id}" do
         expect(page).to have_content(@ride2.name)
         expect(page).to have_content(@ride1.name)
         expect(page).to have_content(@ride3.name)
@@ -30,10 +30,6 @@ RSpec.describe "When I visit an amusement park's show page" do
     
   end
 end
-
-
-
-
 
 # And I see the names of all the rides that are at that theme park listed in alphabetical order
 # And I see the average thrill rating of this amusement park’s rides
