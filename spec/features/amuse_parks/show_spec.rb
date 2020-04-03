@@ -27,7 +27,9 @@ RSpec.describe "When I visit an amusement park's show page" do
   end
 
   it "I see average thrill rating of all its rides" do
+    expected = "Average Thrill Rating of Rides: 6.7/10"
     
+    expect(page).to have_content(expected)
   end
 end
 
