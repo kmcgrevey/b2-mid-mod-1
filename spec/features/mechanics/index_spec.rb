@@ -8,7 +8,10 @@ RSpec.describe "When I visit a mechanics index page" do
   end
   
   it "I see a list of mechanics their names and years exp" do
-   visit '/mechanics'
+    mech1 = Mechanic.create!(name: "Sam Mills", years_exp: 10)
+    mech2 = Mechanic.create!(name: "Kara Smith", years_exp: 11)
+    
+    visit '/mechanics'
 
      within "#mechanic-#{mech1.id}" do
         expect(page).to have_content(mech1.name)
