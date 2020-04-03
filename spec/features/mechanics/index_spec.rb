@@ -26,17 +26,4 @@ RSpec.describe "When I visit a mechanics index page" do
 
 end
 
-
-
-
-# Story 1
-
-# And I see a list of all mechanic’s names and their years of experience
- 
- 
-# Ex: 
-#               All Mechanics
- 
-#     Sam Mills - 10 years of experience 
-#     Kara Smith - 11 years of experience
  
